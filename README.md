@@ -7,3 +7,7 @@
 
 
 ### How to run 
+
+```
+cargo run worker
+```

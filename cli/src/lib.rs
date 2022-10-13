@@ -10,10 +10,10 @@ use utils::types::LogLevel;
 
 #[derive(Parser, Debug)]
 #[clap(
-    name = "rust-starter",
+    name = "code-capsule",
     author,
     about,
-    long_about = "Rust Starter CLI",
+    long_about = "CodeCapsule",
     version
 )]
 #[clap(setting = AppSettings::SubcommandRequired)]
@@ -39,11 +39,11 @@ pub struct Cli {
 #[derive(Subcommand, Debug)]
 enum Commands {
     #[clap(
-        name = "hazard",
-        about = "Generate a hazardous occurance",
+        name = "worker",
+        about = "Load and run .so file",
         long_about = None, 
     )]
-    Hazard,
+    Worker,
     #[clap(
         name = "error",
         about = "Simulate an error",
@@ -90,7 +90,7 @@ pub fn cli_match() -> Result<()> {
 
     // Execute the subcommand
     match &cli.command {
-        Commands::Hazard => commands::hazard()?,
+        Commands::Worker => commands::worker()?,
         Commands::Error => commands::simulate_error()?,
         Commands::Completion {subcommand} => {
             let mut app = Cli::into_app();

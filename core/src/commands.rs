@@ -1,19 +1,13 @@
 use super::error;
-use super::hazard;
+use super::loader;
 
 use utils::app_config::AppConfig;
 use utils::error::Result;
 
 /// Show the configuration file
-pub fn hazard() -> Result<()> {
+pub fn worker() -> Result<()> {
     // Generate, randomly, True or False
-    let random_hazard: bool = hazard::generate_hazard()?;
-
-    if random_hazard {
-        println!("You got it right!");
-    } else {
-        println!("You got it wrong!");
-    }
+    let random_hazard: bool = loader::run_worker()?;
 
     Ok(())
 }
