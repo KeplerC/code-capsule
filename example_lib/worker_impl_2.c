@@ -3,6 +3,6 @@
 #include "stdio.h"
 
 int run_worker(){
-    printf("HERE IS THE WORKER!!!\n");
+    printf("Hello from WORKER #2\n");
     return 0;
 }

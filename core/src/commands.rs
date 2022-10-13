@@ -1,5 +1,5 @@
 use super::error;
-use super::loader;
+use super::worker;
 
 use utils::app_config::AppConfig;
 use utils::error::Result;
@@ -7,7 +7,7 @@ use utils::error::Result;
 /// Show the configuration file
 pub fn worker() -> Result<()> {
     // Generate, randomly, True or False
-    let random_hazard: bool = loader::run_worker()?;
+    worker::run_worker()?;
 
     Ok(())
 }
