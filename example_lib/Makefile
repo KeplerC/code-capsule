@@ -9,5 +9,5 @@ OBJ = library.o
 library: $(OBJ)
 	$(CC) -shared -o lib_worker.so $^ $(CFLAGS)
 
-clean 
+clean: 
 	rm -rf *.o *.so
